@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+        <section class="product-review">
+        <h4>Reviews</h4>
+                   <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" 
+                        ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"novalidate>
+                  <blockquote>
+                    <b>Stars : {{reviewCtrl.review.stars}}</b>
+                    {{reviewCtrl.review.body}}<br/>
+                   <!-- <cite>Par: {{reviewCtrl.review.author}}</cite> -->
+                </blockquote>   
+                       <p>Soumettre un avis</p>
+                    <select ng-model="reviewCtrl.review.stars"rquired>
+                        <option value="1">1 étoile</option>
+                        <option value="2">2 étoiles</option>
+                        <option value="3">3 étoiles</option>
+                        <option value="4">4 étoiles</option>
+                        <option value="5">5 étoiles</option>
+                    </select> <br/> <br/>
+                       <textarea ng-model="reviewCtrl.review.body"required></textarea> <br/> <br/>
+                    <label>Par:</label>
+                    <input name="author" ng-model="reviewCtrl.review.author" type="email" 
+                           class="ng-dirty ng-invalid" class="ng-dirty ng-valid" required/> <br/>
+                    <div> Le formulaire d'avis est  {{reviewForm.$valid}}</div> <br/>
+                    <input type="submit" value="Soumettre votre avis" />
+                </form>  
+        </section>
+
